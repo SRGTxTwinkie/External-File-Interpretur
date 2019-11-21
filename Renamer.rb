@@ -1,7 +1,8 @@
 variables = File.read("variables.txt").split("\n")
 variables_True = []
 variables.each do |i|
-  x = i[3...].strip
+  start = i.index("=") + 1
+  x = i[start...].strip
   if x.to_i.to_s == x
     p
     variables_True.append(x.to_i)
